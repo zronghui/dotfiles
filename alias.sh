@@ -88,6 +88,7 @@ alias top='htop'
 
 alias wget='axel -n 32'
 alias pip='pip3'
+alias python=python3
 
 hexoDir=~/01Code/hexo/hexo-theme-icarus-removeif
 alias hexod='cd $hexoDir && ./categories.sh && hexo g && hexo d;gaa;gcmsg "auto commit";gp;cd -'
@@ -101,6 +102,7 @@ alias gaaCmsgP='gaa;gcmsg "auto commit";gp'
 alias rsync=/usr/local/bin/rsync
 #
 alias cotEdit="open -a 'CotEditor'"
+alias you-get="you-get --playlist"
 
 
 

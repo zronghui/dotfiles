@@ -18,3 +18,8 @@ alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
 # go
 export GOPATH=/Users/zhangronghui/go
 PATH=$GOPATH/bin:$PATH
+
+# elastic search
+export PATH=/usr/local/Cellar/elasticsearch/6.8.6/bin:$PATH
+
+export REDIS_CONNECTION_STRING='redis://redispassword@127.0.0.1:6379'
