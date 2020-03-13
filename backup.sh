@@ -1,2 +1,2 @@
-cp ~/.vimrc ~/.dotfiles/
-cp ~/.zshrc ~/.dotfiles/
+cp ~/.vimrc ~/dotfiles/
+cp ~/.zshrc ~/dotfiles/
