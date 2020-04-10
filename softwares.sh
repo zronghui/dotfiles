@@ -1,3 +1,7 @@
+# crontab 编辑器指定
+# export EDITOR=/usr/local/bin/cot
+export EDITOR=/usr/bin/vim
+
 # mysql
 export PATH=${PATH}:/usr/local/mysql/bin
 
