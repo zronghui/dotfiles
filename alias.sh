@@ -46,6 +46,7 @@ alias getpass='openssl rand -base64 6' # 8位密码
 
 
 # k8s
+[ -f ~/dotfiles/kubectl_aliases.sh ] && source ~/dotfiles/kubectl_aliases.sh
 alias kdev="kubectl --cluster kubernetes-dev --user kubernetes-admin -n"
 alias ktest="kdev data-test"
 alias kprod="kubectl --cluster kubernetes --user dev -n data-prod"
