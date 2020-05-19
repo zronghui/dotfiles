@@ -28,3 +28,9 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
