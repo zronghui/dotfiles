@@ -29,3 +29,8 @@ export PATH=/usr/local/Cellar/elasticsearch/6.8.6/bin:$PATH
 export REDIS_CONNECTION_STRING='redis://redispassword@127.0.0.1:6379'
 
 export GITLAB_HOME=$HOME
+
+export NVM_DIR="/Users/zhangronghui/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+tmux set -g mouse on > /dev/null 2>&1
