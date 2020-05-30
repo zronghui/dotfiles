@@ -67,11 +67,11 @@ export gpu='goofy-mestorf.zhangronghui.brc@bj-a.brainpp.cn'
 alias mysqlstart='sudo /usr/local/mysql/support-files/mysql.server start'
 alias mysqlstop='sudo /usr/local/mysql/support-files/mysql.server stop'
 
-alias ytdl='cd "/Users/zhangronghui/ytdl"; python3 main.py'
+# alias ytdl='cd "/Users/zhangronghui/ytdl"; python3 main.py'
 # alias ytdl="youtube-dl --proxy 'socks5://127.0.0.1:1086' --write-auto-sub --sub-lang en,cn -f bestvideo+bestaudio -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
 # alias rm=rmtrash
 alias py="python3 main.py"
-alias tabcopyToMdLink="python3 '/Volumes/Data/PycharmProjects/private/22 tabcopyToMdLink/main.py'"
+# alias tabcopyToMdLink="python3 '/Volumes/Data/PycharmProjects/private/22 tabcopyToMdLink/main.py'"
 
 # 常用命令的替代工具
 alias ls='colorls -A'
@@ -92,8 +92,9 @@ alias pip='pip3'
 alias python=python3
 
 hexoDir=~/01Code/hexo/hexo-theme-icarus-removeif
-alias hexod='cd $hexoDir && ./categories.sh && hexo g && hexo d;gaa;gcmsg "auto commit";gp;cd -'
-alias hexos='cd $hexoDir && ./categories.sh && hexo g && hexo s;cd -'
+# hexod hexos 见 func.sh
+# alias hexod='cd $hexoDir && ./categories.sh && hexo g && hexo d;gaa;gcmsg "auto commit";gp;cd -'
+# alias hexos='cd $hexoDir && ./categories.sh && hexo g && hexo s;cd -'
 alias hexon='cd $hexoDir && hexo new'
 
 alias uncurl='pbpaste | uncurl | pbcopy'

@@ -23,3 +23,27 @@ retry(){while ! $1; do
        done}
 mcd() { mkdir -p "$1"; cd "$1";} # 创建目录并进入
 cls() { cd "$1"; ls;} # cd and ls
+
+hexoDir=~/01Code/hexo/hexo-theme-icarus-removeif
+function hexod() {
+	cd $hexoDir
+	ag '<img src="/Users/zhangronghui' ./source/_posts
+	if [ $? = 1 ];
+	then
+		# 没有本地图片
+		./categories.sh && hexo g && hexo d;gaa;gcmsg "auto commit";gp;cd -
+	else
+		ag '<img src="/Users/zhangronghui' -l  ./source/_posts | xargs -I _ open _
+	fi
+}
+function hexos() {
+	cd $hexoDir
+	ag '<img src="/Users/zhangronghui' ./source/_posts
+	if [ $? = 1 ];
+	then
+		# 没有本地图片
+		./categories.sh && hexo g && hexo s;cd -
+	else
+		ag '<img src="/Users/zhangronghui' -l  ./source/_posts | xargs -I _ open _
+	fi
+}
