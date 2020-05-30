@@ -105,5 +105,6 @@ alias rsync=/usr/local/bin/rsync
 alias cotEdit="open -a 'CotEditor'"
 alias you-get="you-get --playlist"
 
-
+alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
+alias pycharm='open -a /Applications/PyCharm.app'
 
