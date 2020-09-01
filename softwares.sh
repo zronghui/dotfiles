@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # crontab 编辑器指定
 # export EDITOR=/usr/local/bin/cot
 export EDITOR=/usr/bin/vim
@@ -21,7 +23,7 @@ alias jdk11='export JAVA_HOME=$JAVA_11_HOME'
 
 # go
 export GOPATH=/Users/zhangronghui/go
-PATH=$GOPATH/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # elastic search
 export PATH=/usr/local/Cellar/elasticsearch/6.8.6/bin:$PATH
@@ -33,4 +35,10 @@ export GITLAB_HOME=$HOME
 export NVM_DIR="/Users/zhangronghui/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-tmux set -g mouse on > /dev/null 2>&1
+tmux set -g mouse on > /dev/null 2>&1 # 很慢，但有用
+
+# flutter
+# 中国代理
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export PATH=/Applications/flutter/bin:$PATH

@@ -24,8 +24,8 @@ alias du='du -h' # du 查看当前目录各个文件、目录占用大小，-s �
 alias ping='ping -c 5' # ping 5次停止
 
 ## 命令缩写
-alias h='history -30'
-alias c='clear'
+alias h="history -30 | tr -s ' ' |cut -d' ' -f2-" # mac -f2- centos -f3- 因为 centos 开头多个空格
+alias c='clear' # ctrl + l 快捷键
 
 ## 创建一系列新命令
 alias path='echo -e ${PATH//:/\\n}' # 显示变量PATH,并将：替换为回车
@@ -43,6 +43,8 @@ alias ipi='ipconfig getifaddr en0' # 查看ip地址
 alias untar='tar -zxvf'
 alias getpass='openssl rand -base64 6' # 8位密码
 
+# 错误纠正
+alias 。。='..'
 
 
 # k8s
@@ -90,6 +92,7 @@ alias top='htop'
 alias wget='axel -n 32'
 alias pip='pip3'
 alias python=python3
+alias ppython='pipenv run python'
 
 hexoDir=~/01Code/hexo/hexo-theme-icarus-removeif
 # hexod hexos 见 func.sh
@@ -108,4 +111,8 @@ alias you-get="you-get --playlist"
 
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
 alias pycharm='open -a /Applications/PyCharm.app'
+alias idea='open -a /Applications/IntelliJ\ IDEA.app'
 
+# docker
+alias docker-clean-unused='docker system prune --all --force --volumes'
+alias docker-clean-all='docker stop $(docker container ls -a -q) && docker system prune --all --force --volumes'

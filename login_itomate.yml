@@ -1,0 +1,27 @@
+version: "1.0"
+profile: "iterm2 profile 2"
+tabs:
+  login:
+    title: "login"
+    panes:
+        #  左上：
+      - position: "1/1" 
+        commands:
+          - "cd ~/Downloads/bililive-darwin-amd64"
+          - "tmux new -t bililive -d"
+          - "tmux send-keys -t bililive-0 './bililive-darwin-amd64 -c ./config.yml' C-m"
+        # 左下：
+      - position: "1/2"
+        commands:
+          - "cd ~/01Code/private/GTDWeb"
+          - "tmux new -t gtdweb -d"
+          - "tmux send-keys -t gtdweb-1 'python manage.py runserver_plus 9000' C-m"
+      #   # 右上：qqbot
+      # - position: "2/1"
+      #   commands:
+      #     - "cd ~/01Code/private/QQBot"
+      #     - "python main.py"
+      #   # 右下：docker
+      # - position: "2/2"
+      #   commands:
+      #     - "docker run -ti -d --rm --name cqhttp-test  -v ~/data/coolq:/home/user/coolq  -p 4990:9000  -p 5700:5700 -e VNC_PASSWD=12345678 -e COOLQ_ACCOUNT=1326053532 -e CQHTTP_POST_URL=http://host.docker.internal:4991  -e CQHTTP_SERVE_DATA_FILES=yes  richardchien/cqhttp:latest"
