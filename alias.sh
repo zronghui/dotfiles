@@ -26,14 +26,14 @@ alias ping='ping -c 5' # ping 5次停止
 ## 命令缩写
 
 # 因为 linux 开头多个空格
-if["$(uname)"=="Darwin"];then
-    # Mac OS X 操作系统
+if [ "$(uname)" == "Darwin" ];then
+	# Mac OS X 操作系统
 	alias h="history -30 | tr -s ' ' |cut -d' ' -f2-"
-elif["$(uname)"=="Linux"];then
-    # GNU/Linux 操作系统
+elif [ "$(uname)" == "Linux" ];then
+	# GNU/Linux 操作系统
 	alias h="history -30 | tr -s ' ' |cut -d' ' -f3-"
-elif["$(uname)"=="MINGW32_NT"];then
-    # Windows NT 操作系统
+# elif [ "$(uname)" == "MINGW32_NT" ];then
+	# Windows NT 操作系统
 fi
 
  
@@ -91,11 +91,10 @@ alias py="python3 main.py"
 
 addAlias() {
 	# addAlias originCommand=newCommand
-	originCommand=`echo $1 | cut -d'=' -f1`
-	newCommand=`echo $1 | cut -d'=' -f2`
-	newCli=`echo $newCommand | cut -d' ' -f1`
-	which $newCli >/dev/null 2&>1
-	if [ $? -eq 0 ];
+	originCommand=$(echo "$1" | cut -d'=' -f1)
+	newCommand=$(echo "$1" | cut -d'=' -f2)
+	newCli=$(echo "$newCommand" | cut -d' ' -f1)
+	if which "$newCli" >/dev/null 2&>1;
 	then
 		alias "$originCommand=$newCommand"
 	else
