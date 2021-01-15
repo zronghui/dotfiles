@@ -26,16 +26,14 @@ alias ping='ping -c 5' # ping 5次停止
 ## 命令缩写
 
 # 因为 linux 开头多个空格
-if [ "$(uname)" == "Darwin" ];then
-	# Mac OS X 操作系统
+sysOS=$(uname -s)
+if [ "$sysOS" == "Darwin" ];then
 	alias h="history -30 | tr -s ' ' |cut -d' ' -f2-"
-elif [ "$(uname)" == "Linux" ];then
-	# GNU/Linux 操作系统
+elif [ "$sysOS" == "Linux" ];then
 	alias h="history -30 | tr -s ' ' |cut -d' ' -f3-"
-# elif [ "$(uname)" == "MINGW32_NT" ];then
-	# Windows NT 操作系统
+else
+	echo "Other OS: $sysOS"
 fi
-
  
 alias c='clear' # ctrl + l 快捷键
 
