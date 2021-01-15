@@ -24,17 +24,6 @@ alias du='du -h' # du 查看当前目录各个文件、目录占用大小，-s �
 alias ping='ping -c 5' # ping 5次停止
 
 ## 命令缩写
-
-# 因为 linux 开头多个空格
-sysOS=$(uname -s)
-if [ "$sysOS" == "Darwin" ];then
-	alias h="history -30 | tr -s ' ' |cut -d' ' -f2-"
-elif [ "$sysOS" == "Linux" ];then
-	alias h="history -30 | tr -s ' ' |cut -d' ' -f3-"
-else
-	echo "Other OS: $sysOS"
-fi
- 
 alias c='clear' # ctrl + l 快捷键
 
 ## 创建一系列新命令
@@ -143,4 +132,13 @@ export tab=$(printf '\t')
 # 带进度条的 cp
 alias cpv='rsync -ah --info=progress2'
 
-
+# 在 centos 中运行一直出错, 就写在最后, 防止让其他设置无效
+# 因为 linux 开头多个空格
+sysOS=$(uname -s)
+if [ "$sysOS" == "Darwin" ];then
+	alias h="history -30 | tr -s ' ' |cut -d' ' -f2-"
+elif [ "$sysOS" == "Linux" ];then
+	alias h="history -30 | tr -s ' ' |cut -d' ' -f3-"
+else
+	echo "Other OS: $sysOS"
+fi
