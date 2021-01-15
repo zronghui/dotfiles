@@ -112,7 +112,14 @@ alias you-get="you-get --playlist"
 alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
 alias pycharm='open -a /Applications/PyCharm.app'
 alias idea='open -a /Applications/IntelliJ\ IDEA.app'
+alias webstorm='open -a /Applications/WebStorm.app'
 
 # docker
 alias docker-clean-unused='docker system prune --all --force --volumes'
 alias docker-clean-all='docker stop $(docker container ls -a -q) && docker system prune --all --force --volumes'
+
+export tab=$(printf '\t')
+# 带进度条的 cp
+alias cpv='rsync -ah --info=progress2'
+
+

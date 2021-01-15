@@ -42,3 +42,7 @@ tmux set -g mouse on > /dev/null 2>&1 # 很慢，但有用
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export PATH=/Applications/flutter/bin:$PATH
+
+# MinIO
+export MINIO_ACCESS_KEY=minio
+export MINIO_SECRET_KEY=miniosecret

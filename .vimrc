@@ -1,6 +1,8 @@
 syntax on
 set number
 set ruler
+" 搜索的时候不区分大小写
+set ignorecase smartcase
 
 " 高亮当前行
 set cursorcolumn
