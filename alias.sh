@@ -24,7 +24,19 @@ alias du='du -h' # du 查看当前目录各个文件、目录占用大小，-s �
 alias ping='ping -c 5' # ping 5次停止
 
 ## 命令缩写
-alias h="history -30 | tr -s ' ' |cut -d' ' -f2-" # mac -f2- centos -f3- 因为 centos 开头多个空格
+
+# 因为 linux 开头多个空格
+if["$(uname)"=="Darwin"];then
+    # Mac OS X 操作系统
+	alias h="history -30 | tr -s ' ' |cut -d' ' -f2-"
+elif["$(uname)"=="Linux"];then
+    # GNU/Linux 操作系统
+	alias h="history -30 | tr -s ' ' |cut -d' ' -f3-"
+elif["$(uname)"=="MINGW32_NT"];then
+    # Windows NT 操作系统
+fi
+
+ 
 alias c='clear' # ctrl + l 快捷键
 
 ## 创建一系列新命令
@@ -76,23 +88,35 @@ alias py="python3 main.py"
 # alias tabcopyToMdLink="python3 '/Volumes/Data/PycharmProjects/private/22 tabcopyToMdLink/main.py'"
 
 # 常用命令的替代工具
-alias ls='colorls -A'
-alias lc='colorls -lA --sd'
-alias npm='cnpm'
+
+addAlias() {
+	# addAlias originCommand=newCommand
+	originCommand=`echo $1 | cut -d'=' -f1`
+	newCommand=`echo $1 | cut -d'=' -f2`
+	newCli=`echo $newCommand | cut -d' ' -f1`
+	which $newCli >/dev/null 2&>1
+	if [ $? -eq 0 ];
+	then
+		alias "$originCommand=$newCommand"
+	else
+		echo "建议安装 $newCli ,替换 $originCommand"
+	fi
+}
+addAlias ls='colorls -A'
+addAlias lc='colorls -lA --sd'
+addAlias npm=cnpm
 #alias grep='ag'
-alias cat='bat'
-alias top='htop'
+addAlias cat='bat'
+addAlias top='htop'
+addAlias wget='axel -n 32'
+addAlias pip='pip3'
+addAlias python=python3
+addAlias ppython='pipenv run python'
 
-# mycli -uroot -pkang0322
+# mycli -uroot -pxxxxxxxx
 # 替代 mysql -uroot -p
-
 # 查看 json 文件
 # fx package-lock.json
-
-alias wget='axel -n 32'
-alias pip='pip3'
-alias python=python3
-alias ppython='pipenv run python'
 
 hexoDir=~/01Code/hexo/hexo-theme-icarus-removeif
 # hexod hexos 见 func.sh
