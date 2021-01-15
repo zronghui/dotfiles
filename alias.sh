@@ -92,7 +92,7 @@ addAlias() {
 	originCommand=$(echo "$1" | cut -d'=' -f1)
 	newCommand=$(echo "$1" | cut -d'=' -f2)
 	newCli=$(echo "$newCommand" | cut -d' ' -f1)
-	if which "$newCli" >/dev/null 2&>1;
+	if which "$newCli" >/dev/null 2>&1;
 	then
 		alias "$originCommand=$newCommand"
 	else
